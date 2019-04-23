@@ -14,15 +14,15 @@ namespace StackOverflowProjectRepositories
         void UpdateUserPassword(User user);
         void DeleteUser(int uid);
         List<User> GetUsers();
-        List<User> GetUsersByEmailAndPassword(string Email, string Password);
-        List<User> GetUsersByEmail(string Email);
-        List<User> GetUsersByUserID(int UserId);
+        List<User> GetUsersByEmailAndPassword(string email, string password);
+        List<User> GetUsersByEmail(string email);
+        List<User> GetUsersByUserID(int userId);
         int GetlatestuserID();
     }
 
     class UsersRepository : IUsersRepository
     {
-        StackOverflowDatabaseDbContext _db;
+        private StackOverflowDatabaseDbContext _db;
         public UsersRepository(StackOverflowDatabaseDbContext db)
         {
             _db = db;
@@ -56,9 +56,9 @@ namespace StackOverflowProjectRepositories
             return user;
         }
 
-        public List<User> GetUsersByEmailAndPassword(string Email, string Password)
+        public List<User> GetUsersByEmailAndPassword(string email, string password)
         {
-            var us = _db.Users.Where(e => e.Email == Email && e.PasswordHash == Password).ToList();
+            var us = _db.Users.Where(e => e.Email == email && e.PasswordHash == password).ToList();
             return us;         
         }
 
