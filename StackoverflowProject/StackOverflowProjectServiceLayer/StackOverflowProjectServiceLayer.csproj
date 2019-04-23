@@ -43,5 +43,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StackOverFlowProjectDomainModels\StackOverflowProjectDomainModels.csproj">
+      <Project>{8f3f4e9b-b2ac-4807-b048-ed7e6a23c838}</Project>
+      <Name>StackOverflowProjectDomainModels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,9 +30,9 @@ ViewsCount int)
 go
 
 create table Answers(
-AnswersID int primary key identity(1,1),
-AnswersText nvarchar(max),
-AnswersDateAndTime datetime,
+AnswerID int primary key identity(1,1),
+AnswerText nvarchar(max),
+AnswerDateAndTime datetime,
 userID int references Users(UserID),
 QuestionId int references Questions(QuestionID) on delete cascade,
 VotesCount int)
