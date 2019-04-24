@@ -1,29 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using StackOverFlowProjectDomainModels;
+using StackOverflowProjectRepositories.Interfaces;
 
 namespace StackOverflowProjectRepositories
 {
-    public interface ICategoryRepostiory
-    {
-        void InsertCategory(Category category);
-        void UpdateCategory(Category category);
-        void DeleteCategory(int cid);
-        List<Category> Categories();
-        List<Category> GetCategoryByCategoryID(int categoryID);
-
-    }
-
     public class CategoryRepository : ICategoryRepostiory
     {
         private StackOverflowDatabaseDbContext _db;
 
-        public CategoryRepository(StackOverflowDatabaseDbContext db)
+        public CategoryRepository()
         {
-            _db = db;
+            _db = new StackOverflowDatabaseDbContext();
         }
 
         public List<Category> Categories()

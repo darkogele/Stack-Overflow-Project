@@ -1,30 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using StackOverFlowProjectDomainModels;
+using StackOverflowProjectRepositories.Interfaces;
 
 namespace StackOverflowProjectRepositories
 {
-    public interface IQuestionsRepository
-    {
-        void InsertQuestion(Question question);
-        void UpdateQuestionDetails(Question question);
-        void UpdateQuestionVotesCount(int qid, int value);
-        void UpdateQuestionsAnswersCount(int qid, int value);
-        void UpdateQuestionsViewsCount(int qid, int value);
-        void DeleteQuestion(int qid);
-        List<Question> GetQuestions();
-        List<Question> GetQuestionsByQuestionsID(int questionID);
-    }
 
     public class QuestionsRepository : IQuestionsRepository
     {
         private StackOverflowDatabaseDbContext _db;
-        public QuestionsRepository(StackOverflowDatabaseDbContext db)
+        public QuestionsRepository()
         {
-            _db = db;
+            _db = new StackOverflowDatabaseDbContext();
         }
 
         public void DeleteQuestion(int qid)

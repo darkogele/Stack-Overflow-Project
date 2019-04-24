@@ -1,31 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using StackOverFlowProjectDomainModels;
+using StackOverflowProjectRepositories.Interfaces;
 
 namespace StackOverflowProjectRepositories
 {
-    public interface IUsersRepository
-    {
-        void InsertUser(User user);
-        void UpdateUserDetails(User user);
-        void UpdateUserPassword(User user);
-        void DeleteUser(int uid);
-        List<User> GetUsers();
-        List<User> GetUsersByEmailAndPassword(string email, string password);
-        List<User> GetUsersByEmail(string email);
-        List<User> GetUsersByUserID(int userId);
-        int GetlatestuserID();
-    }
-
-    class UsersRepository : IUsersRepository
+    public class UsersRepository : IUsersRepository
     {
         private StackOverflowDatabaseDbContext _db;
-        public UsersRepository(StackOverflowDatabaseDbContext db)
+        public UsersRepository()
         {
-            _db = db;
+            _db = new StackOverflowDatabaseDbContext();
         }
 
         public void DeleteUser(int uid)
