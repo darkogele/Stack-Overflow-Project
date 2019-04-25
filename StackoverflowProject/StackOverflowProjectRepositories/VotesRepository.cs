@@ -4,7 +4,6 @@ using StackOverflowProjectRepositories.Interfaces;
 
 namespace StackOverflowProjectRepositories
 {
-
     public class VotesRepository : IVotesRepository
     {   
         private StackOverflowDatabaseDbContext _db;

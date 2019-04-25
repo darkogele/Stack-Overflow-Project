@@ -144,9 +144,9 @@
       <Project>{8f3f4e9b-b2ac-4807-b048-ed7e6a23c838}</Project>
       <Name>StackOverflowProjectDomainModels</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StackOverflowProjectRepositories\StackOverflowProjectRepositories.csproj">
-      <Project>{19F09749-57B2-4387-88A8-22CED5F04E36}</Project>
-      <Name>StackOverflowProjectRepositories</Name>
+    <ProjectReference Include="..\StackOverflowProjectViewModels\StackOverflowProjectViewModels.csproj">
+      <Project>{5ca3c51b-2cae-4765-aa3b-6e4f349be5ef}</Project>
+      <Name>StackOverflowProjectViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
