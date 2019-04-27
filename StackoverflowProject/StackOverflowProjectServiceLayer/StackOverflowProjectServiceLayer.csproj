@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriesService.cs" />
+    <Compile Include="Interfaces\ICategoriesService.cs" />
     <Compile Include="Interfaces\IUSerService.cs" />
     <Compile Include="MapperExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
