@@ -24,7 +24,7 @@ namespace StackOverflowProjectServiceLayer.UoW
                     transaction.Commit();
                     return true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     transaction.Rollback();
                     // TODO: LOG ERROR

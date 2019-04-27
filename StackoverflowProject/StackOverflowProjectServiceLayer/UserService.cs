@@ -28,27 +28,55 @@ namespace StackOverflowProjectServiceLayer
 
         public UserViewModel GetuserByUserID(int userID)
         {
-            throw new NotImplementedException();
+            var u = _ur.GetUsersByUserID(userID).FirstOrDefault();
+            UserViewModel uvm = null;
+            if (u != null)
+            {
+                var config = new MapperConfiguration(cfg => { cfg.CreateMap<User, UserViewModel>(); cfg.IgnoreUnmapped(); });
+                IMapper mapper = config.CreateMapper();
+                uvm = mapper.Map<User, UserViewModel>(u);
+            }
+            return uvm;
         }
 
         public List<UserViewModel> GetUsers()
         {
-            throw new NotImplementedException();
+            var u = _ur.GetUsers();
+            var config = new MapperConfiguration(cfg => { cfg.CreateMap<User, UserViewModel>(); cfg.IgnoreUnmapped(); });
+            IMapper mapper = config.CreateMapper();
+            var uvm = mapper.Map<List<User>, List<UserViewModel>>(u);
+            return uvm;
         }
 
         public UserViewModel GetUsersByEmail(string email)
         {
-            throw new NotImplementedException();
+            var u = _ur.GetUsersByEmail(email).FirstOrDefault();
+            UserViewModel uvm = null;
+            if (u != null)
+            {
+                var config = new MapperConfiguration(cfg => { cfg.CreateMap<User, UserViewModel>(); cfg.IgnoreUnmapped(); });
+                IMapper mapper = config.CreateMapper();
+                uvm = mapper.Map<User, UserViewModel>(u);
+            }
+            return uvm;
         }
 
         public UserViewModel GetUsersByEmailAndPassword(string email, string password)
         {
-            throw new NotImplementedException();
+            var u = _ur.GetUsersByEmailAndPassword(email, SHA256HashGenerator.GenerateHash(password)).FirstOrDefault();
+            UserViewModel uvm = null;
+            if (u != null)
+            {
+                var config = new MapperConfiguration(cfg => { cfg.CreateMap<User, UserViewModel>(); cfg.IgnoreUnmapped(); });
+                IMapper mapper = config.CreateMapper();
+                uvm = mapper.Map<User, UserViewModel>(u);
+            }
+            return uvm;
         }
 
         public int InsertUser(RegisterViewModel uvm)
         {
-            var config = new MapperConfiguration(cfg => { cfg.CreateMap<RegisterViewModel, User>(); cfg.IgnoreUnmapped();});
+            var config = new MapperConfiguration(cfg => { cfg.CreateMap<RegisterViewModel, User>(); cfg.IgnoreUnmapped(); });
             IMapper mapper = config.CreateMapper();
             var u = mapper.Map<RegisterViewModel, User>(uvm);
             u.PasswordHash = SHA256HashGenerator.GenerateHash(uvm.Password);
