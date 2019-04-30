@@ -67,8 +67,7 @@ namespace StackOverflowProjectRepositories
                 us.Name = user.Name;
                 us.Mobile = user.Mobile;
                 _db.SaveChanges();               
-            }
-            
+            }          
         }
 
         public void UpdateUserPassword(User user)
