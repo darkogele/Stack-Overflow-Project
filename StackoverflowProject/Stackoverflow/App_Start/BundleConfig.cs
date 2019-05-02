@@ -11,9 +11,9 @@ namespace Stackoverflow
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Scripts/bootstrap").Include(
-                "~/Scripts/jquery-3.3.1.js", 
-                "Scripts/umd/popper.js", 
-                "Scripts/bootstrap.js"));
+                "~/Scripts/jquery-3.3.1.js",
+                "~/Scripts/umd/popper.js", 
+                "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Styles/bootstrap").Include(
                 "~/Content/bootstrap.css"));
