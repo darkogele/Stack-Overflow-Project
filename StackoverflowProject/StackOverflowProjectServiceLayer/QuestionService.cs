@@ -23,7 +23,7 @@ namespace StackOverflowProjectServiceLayer
         {
             _Qr.DeleteQuestion(qid);
         }
-
+    
         public QuestionViewModel GetQuestionByQuestionID(int QuestionID, int UserID = 0)
         {
             var q = _Qr.GetQuestionsByQuestionsID(QuestionID).FirstOrDefault();
