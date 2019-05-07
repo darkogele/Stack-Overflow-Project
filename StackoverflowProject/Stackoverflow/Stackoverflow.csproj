@@ -166,6 +166,8 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Sql Initial DB\BASIC SQL CRUD .sql" />
+    <Content Include="Sql Initial DB\JOIN SQL WITH RELATIONS .sql" />
     <Content Include="Sql Initial DB\SQLQueryStackOverflowClone.sql" />
     <Content Include="Web.config" />
   </ItemGroup>
